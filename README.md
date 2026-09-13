@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💗 LovCount · 写给嘟嘟的代码
+# 💗 LovCount · 写给ta的代码
 
 **一个每秒加一的「想你计数器」，把心跳写进 Git 提交里。**
 
@@ -47,7 +47,7 @@ lov/
 ### 1. 准备仓库
 
 ```bash
-git clone https://github.com/<你的用户名>/lov.git
+git clone https://github.com/findbaicha/lov.git
 cd lov
 ```
 
@@ -147,7 +147,9 @@ nohup python commit.py > lov.log 2>&1 &
 2. 新建 `count.txt`，内容写一个 `0`；
 3. 复制 `commit.py` 和 `index.html`；
 4. 改文案、改参数、`git push`；
-5. 把链接发给那个人。
+5. 在github pages里选择github action配置static html的workflow
+6. 在actions等待部署完成拿url
+7. 把链接发给那个ta
 
 ---
 
