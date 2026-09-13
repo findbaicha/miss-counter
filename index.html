@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<title>LovCount ❤️</title>
+<style>
+  body { font-family: sans-serif; text-align: center; padding-top: 15vh; background: #fff5f5; }
+  h1 { color: #e25555; }
+  #count { font-size: 3em; color: #333; }
+  #status { font-size: 0.8em; color: #aaa; margin-top: 30px; }
+</style>
+</head>
+<body>
+  <h1>写给嘟嘟的代码 ❤️</h1>
+  <div id="count">加载中…</div>
+  <p>只要程序不停，思念就不会中断</p>
+  <div id="status"></div>
+
+<script>
+let count = 0;
+const el = document.getElementById('count');
+
+fetch('count.txt?t=' + Date.now(), {cache: 'no-store'})
+  .then(r => r.text())
+  .then(text => {
+    count = parseInt(text.trim(), 10) || 0;
+    el.textContent = count;
+    document.getElementById('status').textContent =
+      '基准 ' + count + ' · 更新于 ' + new Date().toLocaleTimeString();
+  })
+  .catch(() => { el.textContent = '读取失败'; });
+
+setInterval(() => { count++; el.textContent = count; }, 1000);
+</script>
+</body>
+</html>

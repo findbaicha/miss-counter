@@ -1,0 +1,15 @@
+[Unit]
+Description = Lov-pages
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /../../../commit.py
+WorkingDirectory=/../../..
+Restart = on-failure
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
